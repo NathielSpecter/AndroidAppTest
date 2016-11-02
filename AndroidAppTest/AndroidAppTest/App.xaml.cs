@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AndroidAppTest.ViewModel.Services;
+using AndroidAppTest.Views;
+using AndroidAppTest.Views.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +15,9 @@ namespace AndroidAppTest
         public App()
         {
             InitializeComponent();
-
-            MainPage = new AndroidAppTest.MainPage();
+            DependencyService.Register<IMessageService,MessageService>();
+            DependencyService.Register<INavigationService, NavigationService>();
+            MainPage = new NavigationPage(new MainPageView());
         }
 
         protected override void OnStart()

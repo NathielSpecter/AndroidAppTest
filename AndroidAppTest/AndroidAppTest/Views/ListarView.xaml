@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AndroidAppTest.Views.ListarView">
+  <ContentPage.Content>
+    <ListView BackgroundColor="Transparent"
+                SeparatorVisibility="Default"
+                ItemsSource="{Binding EstudantesLista}"
+                HasUnevenRows="True">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="2" Orientation="Vertical">
+              <Label TextColor="Gray" Text="{Binding Nome}"/>
+              <Label TextColor="Gray" Text="{Binding SobreNome}"/>
+              <Label TextColor="Gray" Text="{Binding Email}"/>
+              <Label TextColor="Gray" Text="{Binding Idade}"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </ContentPage.Content>
+</ContentPage>
